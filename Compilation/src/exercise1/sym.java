@@ -1,3 +1,4 @@
+package exercise1;
 
 public interface sym {
 	public static final int CLASS = 1;

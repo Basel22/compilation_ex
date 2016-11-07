@@ -1,3 +1,4 @@
+package exercise1;
 import java_cup.runtime.Symbol;
 
 public class Container extends Symbol{

@@ -1,3 +1,4 @@
+package exercise1;
 
 public class IllegalException extends Exception  {
 	
