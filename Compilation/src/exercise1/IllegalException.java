@@ -9,11 +9,13 @@ public class IllegalException extends Exception  {
 	
 	private int mLine;
 	private String mMessage;
+	private String mValue;
 	
-	public IllegalException(String message, int line){
+	public IllegalException(String message, String value, int line){
 		super(message);
 		mMessage = message;
 		mLine = line;
+		mValue = value;
 	}
 
 	public String getMessage() {
@@ -24,5 +26,7 @@ public class IllegalException extends Exception  {
 		return mLine;
 	}
 	
-	
+	public String getValue(){
+		return mValue;
+	}
 }

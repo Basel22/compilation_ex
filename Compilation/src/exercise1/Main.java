@@ -25,8 +25,9 @@ public class Main {
 			}
 		}
 		catch (IllegalException e){
-			System.err.println(String.format("[Lexer]: Error- <%s> at line <%d>", e.getMessage(),
-																				e.getLine()));
+			System.err.println(String.format("[Lexer]: Error- <%s - (%s)> at line <%d>", e.getMessage(),
+																						 e.getValue(),
+																						 e.getLine()));
 		}
 		catch (FileNotFoundException e){
 			System.err.println("[Main]: Error- File not found.");
@@ -35,10 +36,6 @@ public class Main {
 		catch(IOException e){
 			System.err.println("[Main]: Error- Failed to read file.");
 			System.exit(1);
-		}
-		catch(Exception e){
-			System.err.println(String.format("[Lexer]: Error- Unexpected token at line <%d> ",
-					e.getStackTrace()[0].getLineNumber()));
 		}
 		finally {
 			if (buffer != null){
