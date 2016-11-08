@@ -702,11 +702,11 @@ void throwIllegalException(String msg, String value, int line) throws IllegalExc
             }
           case 33: break;
           case 3: 
-            { return getContainer(sym.OP, yytext());
+            { return getContainer(sym.OP, sym.myMap.get(yytext()));
             }
           case 34: break;
           case 4: 
-            { return getContainer(sym.STRUCT, yytext());
+            { return getContainer(sym.STRUCT, sym.myMap.get(yytext()));
             }
           case 35: break;
           case 5: 
@@ -738,7 +738,7 @@ void throwIllegalException(String msg, String value, int line) throws IllegalExc
             }
           case 42: break;
           case 12: 
-            { return getContainer(sym.IF, "if");
+            { return getContainer(sym.IF, "IF");
             }
           case 43: break;
           case 13: 
@@ -746,75 +746,75 @@ void throwIllegalException(String msg, String value, int line) throws IllegalExc
             }
           case 44: break;
           case 14: 
-            { return getContainer(sym.NEW, "new");
+            { return getContainer(sym.NEW, "NEW");
             }
           case 45: break;
           case 15: 
-            { return getContainer(sym.INT, "int");
+            { return getContainer(sym.INT, "INT");
             }
           case 46: break;
           case 16: 
-            { return getContainer(sym.ELSE, "else");
+            { return getContainer(sym.ELSE, "ELSE");
             }
           case 47: break;
           case 17: 
-            { return getContainer(sym.TRUE, "true");
+            { return getContainer(sym.TRUE, "TRUE");
             }
           case 48: break;
           case 18: 
-            { return getContainer(sym.THIS, "this");
+            { return getContainer(sym.THIS, "THIS");
             }
           case 49: break;
           case 19: 
-            { return getContainer(sym.NULL, "null");
+            { return getContainer(sym.NULL, "NULL");
             }
           case 50: break;
           case 20: 
-            { return getContainer(sym.VOID, "void");
+            { return getContainer(sym.VOID, "VOID");
             }
           case 51: break;
           case 21: 
-            { return getContainer(sym.CLASS, "class");
+            { return getContainer(sym.CLASS, "CLASS");
             }
           case 52: break;
           case 22: 
-            { return getContainer(sym.BREAK, "break");
+            { return getContainer(sym.BREAK, "BREAK");
             }
           case 53: break;
           case 23: 
-            { return getContainer(sym.FALSE, "false");
+            { return getContainer(sym.FALSE, "FALSE");
             }
           case 54: break;
           case 24: 
-            { return getContainer(sym.WHILE, "while");
+            { return getContainer(sym.WHILE, "WHILE");
             }
           case 55: break;
           case 25: 
-            { return getContainer(sym.LENGTH, "length");
+            { return getContainer(sym.LENGTH, "LENGTH");
             }
           case 56: break;
           case 26: 
-            { return getContainer(sym.STATIC, "static");
+            { return getContainer(sym.STATIC, "STATIC");
             }
           case 57: break;
           case 27: 
-            { return getContainer(sym.STRING, "string");
+            { return getContainer(sym.STRING, "STRING");
             }
           case 58: break;
           case 28: 
-            { return getContainer(sym.RETURN, "return");
+            { return getContainer(sym.RETURN, "RETURN");
             }
           case 59: break;
           case 29: 
-            { return getContainer(sym.EXTENDS, "extends");
+            { return getContainer(sym.EXTENDS, "EXTENDS");
             }
           case 60: break;
           case 30: 
-            { return getContainer(sym.BOOLEAN, "boolean");
+            { return getContainer(sym.BOOLEAN, "BOOLEAN");
             }
           case 61: break;
           case 31: 
-            { return getContainer(sym.CONTINUE, "continue");
+            { return getContainer(sym.CONTINUE, "CONTINUE");
             }
           case 62: break;
           default:

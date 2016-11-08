@@ -71,28 +71,28 @@ OPEN_STRING = {QUOTE}[^\"]*
 
 /* defined language words */ 
 
-"class"	   	{ return getContainer(sym.CLASS, "class"); }
-"extends" 	{ return getContainer(sym.EXTENDS, "extends"); }
-"static" 	{ return getContainer(sym.STATIC, "static"); }
-"void" 		{ return getContainer(sym.VOID, "void"); }
-"int" 		{ return getContainer(sym.INT, "int"); }
-"boolean" 	{ return getContainer(sym.BOOLEAN, "boolean"); }
-"string" 	{ return getContainer(sym.STRING, "string"); }
-"return" 	{ return getContainer(sym.RETURN, "return"); }
-"if" 		{ return getContainer(sym.IF, "if"); }
-"else" 		{ return getContainer(sym.ELSE, "else"); }
-"while" 	{ return getContainer(sym.WHILE, "while"); }
-"break" 	{ return getContainer(sym.BREAK, "break"); }
-"continue" 	{ return getContainer(sym.CONTINUE, "continue"); }
-"this" 		{ return getContainer(sym.THIS, "this"); }
-"new" 		{ return getContainer(sym.NEW, "new"); }
-"length" 	{ return getContainer(sym.LENGTH, "length"); }
-"true" 		{ return getContainer(sym.TRUE, "true"); }
-"false" 	{ return getContainer(sym.FALSE, "false"); }
-"null" 		{ return getContainer(sym.NULL, "null"); }
+"class"	   	{ return getContainer(sym.CLASS, "CLASS"); }
+"extends" 	{ return getContainer(sym.EXTENDS, "EXTENDS"); }
+"static" 	{ return getContainer(sym.STATIC, "STATIC"); }
+"void" 		{ return getContainer(sym.VOID, "VOID"); }
+"int" 		{ return getContainer(sym.INT, "INT"); }
+"boolean" 	{ return getContainer(sym.BOOLEAN, "BOOLEAN"); }
+"string" 	{ return getContainer(sym.STRING, "STRING"); }
+"return" 	{ return getContainer(sym.RETURN, "RETURN"); }
+"if" 		{ return getContainer(sym.IF, "IF"); }
+"else" 		{ return getContainer(sym.ELSE, "ELSE"); }
+"while" 	{ return getContainer(sym.WHILE, "WHILE"); }
+"break" 	{ return getContainer(sym.BREAK, "BREAK"); }
+"continue" 	{ return getContainer(sym.CONTINUE, "CONTINUE"); }
+"this" 		{ return getContainer(sym.THIS, "THIS"); }
+"new" 		{ return getContainer(sym.NEW, "NEW"); }
+"length" 	{ return getContainer(sym.LENGTH, "LENGTH"); }
+"true" 		{ return getContainer(sym.TRUE, "TRUE"); }
+"false" 	{ return getContainer(sym.FALSE, "FALSE"); }
+"null" 		{ return getContainer(sym.NULL, "NULL"); }
 
-{STRUCT} 	{return getContainer(sym.STRUCT, yytext()); }
-{OP} 		{return getContainer(sym.OP, yytext()); }
+{STRUCT} 	{return getContainer(sym.STRUCT, sym.myMap.get(yytext())); }
+{OP} 		{return getContainer(sym.OP, sym.myMap.get(yytext())); }
 
 {ID} 		{ return getContainer(sym.ID, "ID"); }
 {CLASS_ID} 	{ return getContainer(sym.CLASS_ID, "CLASS_ID"); }
