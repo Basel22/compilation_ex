@@ -689,7 +689,9 @@ void throwIllegalException(String msg, String value, int line) throws IllegalExc
 
       if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
         zzAtEOF = true;
-        return null;
+              {
+                return getContainer(sym.EOF, "EOF");
+              }
       }
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {

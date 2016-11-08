@@ -60,7 +60,6 @@ CHAR = [[\x20-\x21\x23-\x5B\x5D-\x7E]("\\n")("\\\\")("\\\"")("\\t")]
 STRING = {QUOTE}{CHAR}*{QUOTE}
 OPEN_STRING = {QUOTE}[^\"]*
 
-
 /* comments comments comments */
 
 %%
@@ -91,8 +90,8 @@ OPEN_STRING = {QUOTE}[^\"]*
 "false" 	{ return getContainer(sym.FALSE, "FALSE"); }
 "null" 		{ return getContainer(sym.NULL, "NULL"); }
 
-{STRUCT} 	{return getContainer(sym.STRUCT, sym.myMap.get(yytext())); }
-{OP} 		{return getContainer(sym.OP, sym.myMap.get(yytext())); }
+{STRUCT} 	{ return getContainer(sym.STRUCT, sym.myMap.get(yytext())); }
+{OP} 		{ return getContainer(sym.OP, sym.myMap.get(yytext())); }
 
 {ID} 		{ return getContainer(sym.ID, "ID"); }
 {CLASS_ID} 	{ return getContainer(sym.CLASS_ID, "CLASS_ID"); }
@@ -100,6 +99,8 @@ OPEN_STRING = {QUOTE}[^\"]*
 {INTEGER} 	{return getContainer(sym.INTEGER, "INTEGER"); }
 
 {STRING} 	{return getContainer(sym.STR, "STRING"); }
+
+<<EOF>>		{ return getContainer(sym.EOF, "EOF"); }
 
 /* exception handlers of illegal terms */
 

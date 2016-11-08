@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws Exception{
-		if(args.length != 1){
+		if (args.length != 1){
 			System.err.println("[Main]: Error- must enter one argument only.");
 			System.exit(1);
 		}
@@ -16,7 +16,7 @@ public class Main {
 			Lexer lex = new Lexer(buffer);
 			Container container = null;
 			container = lex.next_token();
-			while(container != null){
+			while (container != null){
 				getId = container.getId();
 				switch(getId){
 				case sym.STRING:
@@ -30,18 +30,18 @@ public class Main {
 					break;
 				default:
 					System.out.println(String.format("%s: %s",
-							container.getLine(),
+							getId==sym.EOF?container.getLine()+1:container.getLine(),
 							container.getTag()));
 					break;
 				}
-				
+				if (getId == sym.EOF) break;
 				container = lex.next_token();
 			}
 		}
 		catch (IllegalException e){
-			System.err.println(String.format("[Lexer]: Error- <%s - (%s)> at line <%d>", e.getMessage(),
-																						 e.getValue(),
-																						 e.getLine()));
+			System.err.println(String.format("%d: Lexical error: %s '%s'", e.getLine(),
+																		 e.getMessage(),
+																		 e.getValue()));
 		}
 		catch (FileNotFoundException e){
 			System.err.println("[Main]: Error- File not found.");
