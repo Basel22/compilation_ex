@@ -11,16 +11,30 @@ public class Main {
 		}
 		FileReader buffer = null;
 		try{
+			int getId;
 			buffer = new FileReader(args[0]);
 			Lexer lex = new Lexer(buffer);
 			Container container = null;
 			container = lex.next_token();
 			while(container != null){
-				System.out.println(String.format("Token:[%s] - Tag:[%s] - Line:[%s] - Column:[%s]",
-													container.getValue(),
-													container.getTag(),
-													container.getLine(),
-													container.getColumn()));
+				getId = container.getId();
+				switch(getId){
+				case sym.STRING:
+				case sym.INTEGER:
+				case sym.CLASS_ID:
+				case sym.ID:
+					System.out.println(String.format("%s: %s(%s)",
+							container.getLine(),
+							container.getTag(),
+							container.getValue()));
+					break;
+				default:
+					System.out.println(String.format("%s: %s",
+							container.getLine(),
+							container.getTag()));
+					break;
+				}
+				
 				container = lex.next_token();
 			}
 		}
