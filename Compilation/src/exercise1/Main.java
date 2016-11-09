@@ -40,8 +40,8 @@ public class Main {
 		}
 		catch (IllegalException e){
 			System.err.println(String.format("%d: Lexical error: %s '%s'", e.getLine(),
-						
-					e.getMessage(),															 e.getValue()));
+																			e.getMessage(),							
+																			e.getValue()));
 		}
 		catch (FileNotFoundException e){
 			System.err.println("[Main]: Error- File not found.");
