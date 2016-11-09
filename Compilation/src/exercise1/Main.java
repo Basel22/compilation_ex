@@ -19,7 +19,7 @@ public class Main {
 			while (container != null){
 				getId = container.getId();
 				switch(getId){
-				case sym.STRING:
+				case sym.QUOTE:
 				case sym.INTEGER:
 				case sym.CLASS_ID:
 				case sym.ID:

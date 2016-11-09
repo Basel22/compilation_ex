@@ -31,6 +31,7 @@ public class sym {
 	public static final int INTEGER = 24;
 	public static final int STR = 25;
 	public static final int EOF = 26;
+	public static final int QUOTE = 27;
 	
 	static final Map<String, String> myMap;
 	static{
@@ -50,7 +51,7 @@ public class sym {
         aMap.put("!", "LNEG");
         aMap.put("||", "LOR");
         aMap.put("<", "LT");
-        aMap.put("=<", "LTE");
+        aMap.put("<=", "LTE");
         aMap.put("-", "MINUS");
         aMap.put("%", "MOD");
         aMap.put("*", "MULTIPLY");

@@ -736,7 +736,7 @@ void throwIllegalException(String msg, String value, int line) throws IllegalExc
             }
           case 41: break;
           case 11: 
-            { return getContainer(sym.STR, "STRING");
+            { return getContainer(sym.QUOTE, "QUOTE");
             }
           case 42: break;
           case 12: 

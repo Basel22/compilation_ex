@@ -57,7 +57,7 @@ CLASS_ID = [A-Z]{ID}*
 QUOTE = "\""
 QUOTE_CHAR = "\\\""
 CHAR = [[\x20-\x21\x23-\x5B\x5D-\x7E]("\\n")("\\\\")("\\\"")("\\t")]
-STRING = {QUOTE}{CHAR}*{QUOTE}
+QUOTED = {QUOTE}{CHAR}*{QUOTE}
 OPEN_STRING = {QUOTE}[^\"]*
 
 /* comments comments comments */
@@ -98,7 +98,7 @@ OPEN_STRING = {QUOTE}[^\"]*
 
 {INTEGER} 	{return getContainer(sym.INTEGER, "INTEGER"); }
 
-{STRING} 	{return getContainer(sym.STR, "STRING"); }
+{QUOTED} 	{return getContainer(sym.QUOTE, "QUOTE"); }
 
 <<EOF>>		{ return getContainer(sym.EOF, "EOF"); }
 
