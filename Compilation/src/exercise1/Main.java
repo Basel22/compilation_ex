@@ -49,16 +49,22 @@ public class Main {
 			}
 		}
 		catch (IllegalException e){
-			System.err.println(String.format("%d: Lexical error: %s '%s'", e.getLine(),
+			/*System.err.println(String.format("%d: Lexical error: %s '%s'", e.getLine(),
 																			e.getMessage(),							
-																			e.getValue()));
+																			e.getValue()));*/
+			writer.write(String.format("%d: Lexical error: %s '%s'", e.getLine(),
+					e.getMessage(),							
+					e.getValue()));
+			System.exit(1);
 		}
 		catch (FileNotFoundException e){
-			System.err.println("[Main]: Error- File not found.");
+			/*System.err.println("[Main]: Error- File not found.");*/
+			writer.write("[Main]: Error- File not found.");
 			System.exit(1);
 		}
 		catch(IOException e){
-			System.err.println("[Main]: Error- Failed to read file.");
+			/*System.err.println("[Main]: Error- Failed to read file.");*/
+			writer.write("[Main]: Error- Failed to read file.");
 			System.exit(1);
 		}
 		finally {
