@@ -696,7 +696,7 @@ void throwIllegalException(String msg, String value, int line) throws IllegalExc
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { throwIllegalException("Illegal character", yytext(), yyline+1);
+            { throwIllegalException("illegal character", yytext(), yyline+1);
             }
           case 32: break;
           case 2: 

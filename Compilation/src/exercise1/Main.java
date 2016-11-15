@@ -39,12 +39,15 @@ public class Main {
 					/*System.out.println(String.format("%s: %s",
 							getId==sym.EOF?container.getLine()+1:container.getLine(),
 							container.getTag()));*/
-					writer.write(String.format("%s: %s\n",
+					writer.write(String.format("%s: %s%s",
 							getId==sym.EOF?container.getLine()+1:container.getLine(),
-							container.getTag()));
+							container.getTag(),
+							getId==sym.EOF?"":"\n"));
 					break;
 				}
-				if (getId == sym.EOF) break;
+				if (getId == sym.EOF) {
+					break;
+				}
 				container = lex.next_token();
 			}
 		}

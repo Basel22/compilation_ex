@@ -107,4 +107,4 @@ OPEN_STRING = {QUOTE}[^\"]*
 {OPEN_STRING} 			{ throwIllegalException("Open string!", yytext(), yyline+1); }
 {COMMENT_ERROR} 		{ throwIllegalException("Open comment!", yytext(), yyline+1); }
 {ZERO_FIRST_INTEGER}	{ throwIllegalException("Number with a leading zero!", yytext(), yyline+1); }
-. 						{ throwIllegalException("Illegal character", yytext(), yyline+1); }
+. 						{ throwIllegalException("illegal character", yytext(), yyline+1); }
