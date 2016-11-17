@@ -3,7 +3,6 @@ package exercise2;
 import java.math.BigInteger;
 
 public class Scalar {
-	
 	private int mDenum;
 	private int mEnum; 
 	
@@ -47,6 +46,12 @@ public class Scalar {
 	    factor = gcd.intValue();
 		mEnum = mEnum/factor;
 		mDenum = mDenum/factor;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		/*To be implemented*/
+		return super.equals(obj);
 	}
 	
 	public int getDenum() {
