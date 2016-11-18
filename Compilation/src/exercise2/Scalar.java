@@ -3,12 +3,12 @@ package exercise2;
 import java.math.BigInteger;
 
 public class Scalar {
-	private int mDenum;
 	private int mEnum; 
+	private int mDenum;
 	
 	public Scalar(int Enum, int Denum){
-		mDenum = Denum;
 		mEnum = Enum;
+		mDenum = Denum;
 	}
 	
 	public static Scalar execute_op(Scalar scalar1, Scalar scalar2, ops op){

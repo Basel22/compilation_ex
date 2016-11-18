@@ -1,10 +1,14 @@
 package exercise2;
 
+import java.util.List;
+
 public class Tester {
 	public static void main(String[] argv){
-		Scalar scalar1 = new Scalar(4,3);
-		Scalar scalar2 = new Scalar(4,3);
-		Scalar result = Scalar.execute_op(scalar1, scalar2, ops.ADD);
-		result.printValue();
+		//Matrix matrix = new Matrix();
+		//matrix.importMatrixFromFile(argv[0]);
+		//matrix.addRowFactor(1, 3, new Scalar(1,1));
+		//System.out.println("this looks promising");
+		List <OpRow> x = OpRow.parseOpFile(argv[0]);
+		System.out.println("this looks promising");
 	}
 }
