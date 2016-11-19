@@ -119,4 +119,24 @@ public class OpRow {
 	public void setmType(rowOpType mType) {
 		this.mType = mType;
 	}
+
+	public ops getmOperatorType() {
+		return mOperatorType;
+	}
+
+	public rowOpType getmType() {
+		return mType;
+	}
+
+	public int getmRowSrc() {
+		return mRowSrc;
+	}
+
+	public int getmRowDst() {
+		return mRowDst;
+	}
+
+	public Scalar getmFactor() {
+		return mFactor;
+	}
 }

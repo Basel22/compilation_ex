@@ -8,17 +8,11 @@ import java.util.List;
 
 public class Matrix {
 	private List<List<Scalar>> mMatrix = null;
-	private String mOpFilePath;
 	
 	public Matrix(){
 		mMatrix = new ArrayList<>();
 	}
-	
-	public Matrix(String opFilePath){
-		mMatrix = new ArrayList<>();
-		mOpFilePath = opFilePath;
-	}
-	
+		
 	/***
 	 * this method imports a matrix text data file into a Matrix object
 	 * @param path
@@ -71,8 +65,28 @@ public class Matrix {
 	/***
 	 * 	this method will execute all the operations found in the operations file
 	 */
-	public void executeOpFile(){
-		/*To be implemented*/
+	public void executeOpFile(String path2file){
+		List<OpRow> rowOperations = OpRow.parseOpFile(path2file);
+		for (OpRow operation: rowOperations){
+			rowOpType type = operation.getmType();
+			switch(type){
+			case MULTI:
+				this.multiByScalar(operation.getmRowSrc(),
+						operation.getmFactor());
+				break;
+			case FACTOR:
+				this.addRowFactor(operation.getmRowSrc(),
+						operation.getmRowDst(),
+						operation.getmFactor());
+				break;
+			case SWITCH:
+				this.switchRows(operation.getmRowSrc(),
+						operation.getmRowDst());
+				break;
+			default:
+				break;
+			}
+		}
 	}
 	
 	/***
