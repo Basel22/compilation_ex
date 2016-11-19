@@ -158,11 +158,14 @@ public class Matrix {
 		String matrixRepr = "";
 		for (List<Scalar> row : mMatrix){
 			for (Scalar column: row){
-				matrixRepr += String.format("%s/%s ",
-						column.getEnum(),
-						column.getDenum());
+				matrixRepr += column.getDenum()==1?
+						String.format("%s ",
+									column.getEnum()):
+							String.format("%s/%s ",
+									column.getEnum(),
+									column.getDenum());
 			}
-			matrixRepr += "\n";
+			matrixRepr += "\r\n";
 		}
 		return matrixRepr;
 	}
