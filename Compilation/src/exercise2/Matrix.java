@@ -153,4 +153,17 @@ public class Matrix {
 		}
 		mMatrix.set(row_src, productRow);
 	}
+	
+	public String matrixPrettyFormat(){
+		String matrixRepr = "";
+		for (List<Scalar> row : mMatrix){
+			for (Scalar column: row){
+				matrixRepr += String.format("%s/%s ",
+						column.getEnum(),
+						column.getDenum());
+			}
+			matrixRepr += "\n";
+		}
+		return matrixRepr;
+	}
 }
