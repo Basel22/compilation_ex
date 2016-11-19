@@ -155,7 +155,7 @@ public class Matrix {
 	}
 	
 	public String matrixPrettyFormat(){
-		String matrixRepr = "";
+		String matrixRepr = "[";
 		for (List<Scalar> row : mMatrix){
 			for (Scalar column: row){
 				matrixRepr += column.getDenum()==1?
@@ -165,8 +165,12 @@ public class Matrix {
 									column.getEnum(),
 									column.getDenum());
 			}
-			matrixRepr += "\r\n";
+			matrixRepr = matrixRepr.trim();
+			matrixRepr += "; ";
 		}
+		matrixRepr = matrixRepr.trim();
+		matrixRepr = matrixRepr.substring(0, matrixRepr.length()-1);
+		matrixRepr += "]";
 		return matrixRepr;
 	}
 }
