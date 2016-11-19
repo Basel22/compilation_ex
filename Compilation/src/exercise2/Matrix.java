@@ -63,10 +63,15 @@ public class Matrix {
 	}
 	
 	/***
-	 * 	this method will execute all the operations found in the operations file
+	 * execute the row operations as instructed in a specified operations file
+	 * @param path2file
+	 * 		the path where the operations file is located on the local machine
 	 */
 	public void executeOpFile(String path2file){
+		//parse the operatons file into a list of operations (OpRow objects)
 		List<OpRow> rowOperations = OpRow.parseOpFile(path2file);
+		
+		//iterate over all operations in the list and determine what to do accordingly
 		for (OpRow operation: rowOperations){
 			rowOpType type = operation.getmType();
 			switch(type){
@@ -154,6 +159,11 @@ public class Matrix {
 		mMatrix.set(row_src, productRow);
 	}
 	
+	/***
+	 * this method renders the current state of the matrix into a correct format
+	 * @return
+	 * 		a render version of the matrix into a string object
+	 */
 	public String matrixPrettyFormat(){
 		String matrixRepr = "[";
 		for (List<Scalar> row : mMatrix){

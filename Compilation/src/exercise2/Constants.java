@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Constants {
 	/***
-	 * this method returns all regex expression to catch operators in a list
+	 * this method returns all regex expressions to catch row operation formats from op file
 	 */
 	public static List<String[]> getAllRegexExpressions(){
 		String[] switchRegex = {"R(\\d*)\\s<->\\sR(\\d*)", rowOpType.SWITCH.toString()};

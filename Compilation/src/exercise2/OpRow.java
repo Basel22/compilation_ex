@@ -25,6 +25,9 @@ public class OpRow {
 		mType = type;
 	}
 	
+	/***
+	 * empty constructor
+	 */
 	public OpRow(){
 		
 	}
@@ -100,6 +103,8 @@ public class OpRow {
 		return null;
 	}
 
+	/*Setters and Getters section*/
+	
 	public void setmOperatorType(ops mOperatorType) {
 		this.mOperatorType = mOperatorType;
 	}
